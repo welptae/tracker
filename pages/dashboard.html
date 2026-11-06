@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Dashboard | Tracker</title>
+<meta name="description" content="Overview of your assignments: totals, status and course charts, and a due-date table.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0d6efd"><link rel="manifest" href="../assets/manifest.webmanifest">
+<meta name="author" content="Nur Saadah"><meta name="keywords" content="assignment tracker, university, deadlines, IMS566">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230d6efd%22/><text x=%2250%22 y=%2272%22 font-size=%2270%22 text-anchor=%22middle%22 fill=%22white%22>t</text></svg>">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet"><link href="../css/timetable.css" rel="stylesheet"><link href="../css/dark.css" rel="stylesheet"></head>
+<body data-auth="1">
+<header id="nav"></header>
+<main class="container">
+  <div class="page-head d-flex justify-content-between align-items-end"><div><h1 class="h2">Dashboard</h1><p class="muted mb-0">What needs your attention.</p></div>
+    <div class="d-flex flex-wrap align-items-end gap-2 justify-content-end">
+      <div><label class="form-label small muted mb-1" for="semStart">Semester starts</label><input type="date" id="semStart" class="form-control form-control-sm"></div>
+      <div><label class="form-label small muted mb-1" for="semEnd">Semester ends</label><input type="date" id="semEnd" class="form-control form-control-sm"></div>
+      <span class="badge text-bg-primary fs-6 fw-medium align-self-end py-2" id="weekBadge" role="status"></span></div></div>
+  <section class="row g-3 mb-3" aria-label="This week">
+    <div class="col-lg-6"><div class="panel h-100" id="dueWeek"></div></div>
+    <div class="col-lg-6"><div class="panel h-100" id="todayClasses"></div></div>
+  </section>
+  <section class="row g-3 mb-3" aria-label="Summary and charts">
+    <div class="col-lg-3"><div class="panel sum h-100"><div class="card-head">Assignments</div>
+      <div class="sum-total"><strong id="kTotal"></strong><span>Total assignments</span></div><ul class="sum-list" id="sumList"></ul></div></div>
+    <div class="col-md-6 col-lg-4"><div class="panel h-100"><h2 class="h6 text-center mb-0">Count by status</h2><p class="small muted text-center">Click a slice to filter the table</p><div class="chart-box"><canvas id="statusChart"></canvas></div></div></div>
+    <div class="col-md-6 col-lg-5"><div class="panel h-100"><h2 class="h6 text-center mb-0">Count by course</h2><p class="small muted text-center">Click a bar to filter the table</p><div class="chart-box"><canvas id="courseChart"></canvas></div></div></div>
+  </section>
+  <section class="panel mb-3" aria-label="Due per week"><h2 class="h6 mb-0">Tasks due per week</h2><p class="small muted">Click a bar to filter the table</p><div class="chart-box"><canvas id="weekChart"></canvas></div></section>
+  <section class="panel p-0" id="dueSection" aria-label="Due dates"><div id="filterBar" class="d-none border-bottom px-3 py-2 small" aria-live="polite"></div><div class="table-responsive"><table class="table table-sage mb-0">
+    <thead><tr><th>Due week</th><th>Weeks left</th><th>Assignment</th><th>Course</th><th>Status</th><th>Type</th><th></th></tr></thead><tbody id="dueBody"></tbody></table></div>
+    <div id="viewAllBar" class="text-center border-top py-2 d-none"><button class="btn btn-link btn-sm text-decoration-none" id="viewAll" aria-expanded="false"></button></div></section>
+</main>
+<div id="footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script src="../js/data.js"></script><script src="../js/app.js"></script><script src="../js/dashboard.js"></script>
+</body></html>

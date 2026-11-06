@@ -1,0 +1,143 @@
+/* ===== Tracker - global styles =====
+   Clean minimal, using Bootstrap 5.3's own colours (primary blue, success green, warning yellow, danger red). */
+:root{--ink:#212529;--mute:#6c757d;--line:#dee2e6;--soft:#f8f9fa;--accent:#0d6efd;--head:#0d6efd;--warn:#997404;--bad:#dc3545}
+body{font-family:'Source Sans 3',sans-serif;color:var(--ink);background:#f8f9fa;min-height:100vh;display:flex;flex-direction:column}
+h1,h2,h3,h4,h5,.wordmark{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.01em}
+main{flex:1}
+.muted{color:var(--mute)}
+
+/* Navbar */
+.top-nav{border-bottom:1px solid var(--line);background:#fff}
+.wordmark{font-size:1.6rem;font-weight:600;letter-spacing:.14em;text-transform:lowercase;color:var(--ink);text-decoration:none}
+.top-nav .nav-link{color:var(--mute);padding:1.1rem .9rem;border-bottom:2px solid transparent}
+.top-nav .nav-link:hover{color:var(--ink)}
+.top-nav .nav-link.active{color:var(--ink);border-bottom-color:var(--ink)}
+@media(max-width:991px){.top-nav .nav-link{padding:.6rem 0;border-bottom:0}.top-nav .nav-link.active{font-weight:600}}
+
+/* Buttons and forms */
+.form-control,.form-select{border-radius:2px;border-color:#ced4da}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* Panels, stats */
+.panel{border:1px solid var(--line);padding:1.25rem;background:#fff}
+.stat{border:1px solid var(--line);padding:1rem 1.25rem;height:100%}
+.stat .num{font-family:'Jost',sans-serif;font-size:2rem;font-weight:500;line-height:1.1}
+.stat .lbl{color:var(--mute);font-size:.9rem}
+.page-head{margin:1.5rem 0 1.25rem}
+.chart-box{position:relative;height:270px}
+.bar{height:6px;background:var(--line)}.bar span{display:block;height:100%;background:var(--accent)}
+
+/* Tables, status chips, pills */
+.table{--bs-table-bg:transparent}
+.table thead th{font-weight:500;color:var(--mute);font-size:.85rem;border-bottom:1px solid var(--ink);white-space:nowrap}
+.table td{vertical-align:middle}
+.st{display:inline-block;font-size:.8rem;padding:.15rem .6rem;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.st-Not-started{color:#6c757d}.st-In-progress{color:#997404}.st-Completed,.st-OK{color:#198754}.st-Low{color:var(--warn)}.st-Out{color:var(--bad)}
+
+/* Login */
+.split{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}
+.split-brand{background:var(--soft);padding:4rem;display:flex;flex-direction:column;justify-content:space-between}
+.split-brand h1{font-size:3rem;line-height:1.05;max-width:13ch}
+.swatches{display:flex;gap:.5rem}.swatches span{width:40px;height:56px}
+.split-form{display:flex;align-items:center;justify-content:center;padding:2rem}
+.split-form .box{width:100%;max-width:380px}
+.tabs-lite button{background:none;border:0;border-bottom:2px solid transparent;padding:.5rem 0;margin-right:1.5rem;color:var(--mute);font-weight:500}
+.tabs-lite button.on{color:var(--ink);border-bottom-color:var(--ink)}
+@media(max-width:767px){.split{grid-template-columns:1fr}.split-brand{padding:2rem;gap:2rem}.split-brand h1{font-size:2.2rem}}
+
+/* Footer + toast */
+.site-footer{border-top:1px solid var(--line);padding:2rem 0;margin-top:3rem;font-size:.92rem;color:var(--mute)}
+.site-footer a{color:var(--ink);text-decoration:none;margin-right:1rem}
+.toast-lite{position:fixed;bottom:1.5rem;left:50%;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:.6rem 1.1rem;opacity:0;transition:.25s;pointer-events:none;z-index:2000}
+.toast-lite.show{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){.toast-lite{transition:none}}
+
+/* Dashboard pieces */
+.sum{padding:0}
+.sum .card-head{background:var(--head);color:#fff;font-family:'Jost',sans-serif;font-size:1.15rem;padding:.7rem 1.1rem}
+.sum-total{padding:.65rem 1.1rem;background:var(--soft);border-bottom:1px solid var(--line)}
+.sum-list{list-style:none;margin:0;padding:.7rem 1.1rem}
+.sum-list li{display:flex;justify-content:space-between;align-items:center;padding:.3rem 0}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:.55rem}
+.table-sage thead th{background:var(--head);color:#fff;font-weight:500;border:0;padding:.7rem .8rem}
+.table-sage td{padding:.65rem .8rem;border-color:var(--line)}
+.chip{display:inline-block;font-size:.82rem;padding:.12rem .8rem;border-radius:99px;white-space:nowrap}
+.chip-done{background:#d1e7dd;color:#0a3622}.chip-prog{background:#fff3cd;color:#664d03}
+.chip-late{background:#f8d7da;color:#58151c}.chip-new{background:#e2e3e5;color:#2b2f32}
+
+/* Subtle buttons (soft tinted background, no heavy fill) */
+.btn-subtle-success,.btn-subtle-secondary{border:1px solid}
+.btn.btn-subtle-success{background:#d1e7dd;color:#0a3622;border-color:#a3cfbb}.btn.btn-subtle-success:hover{background:#badbcc;color:#0a3622;border-color:#a3cfbb}
+.btn.btn-subtle-secondary{background:#f8f9fa;color:#6c757d;border-color:#dee2e6}.btn.btn-subtle-secondary:hover{background:#e2e3e5;color:#2b2f32;border-color:#c4c8cb}
+.btn.btn-subtle-info{background:#cff4fc;color:#055160;border-color:#9eeaf9}.btn.btn-subtle-info:hover{background:#b6effb;color:#055160;border-color:#9eeaf9}
+
+/* Clickable course cards */
+.course-card{cursor:pointer;transition:border-color .15s,box-shadow .15s}
+.course-card:hover,.course-card:focus-visible{border-color:var(--accent);box-shadow:0 .25rem .75rem rgba(13,110,253,.12)}
+@media(prefers-reduced-motion:reduce){.course-card{transition:none}}
+
+/* Toast action, skip link */
+.toast-act{background:none;border:0;color:#9ec5fe;font-weight:600;margin-left:.9rem;text-decoration:underline;cursor:pointer}
+.skip-link{position:absolute;z-index:3000;left:.5rem;top:.5rem;background:#fff;color:#000;padding:.5rem 1rem;border:2px solid var(--accent)}
+
+/* Due-week boxes and their column header are centred */
+[data-week]{text-align:center}
+.table-sage thead th:first-child{text-align:center}
+
+/* Password show/hide button sits inside the input */
+.pw-wrap{position:relative}
+.pw-wrap .form-control{padding-right:3rem}
+.pw-toggle{position:absolute;top:0;right:0;height:100%;width:3rem;border:0;background:none;color:var(--mute);font-size:1.25rem}
+.pw-toggle:hover{color:var(--ink)}
+input::-ms-reveal{display:none}
+
+/* Today's classes tiles (dashboard); colours come from the timetable's .tt-c0 to .tt-c7 */
+.cls-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.6rem}
+.cls-row{display:flex;align-items:center;gap:1rem;padding:.7rem .9rem;border-radius:8px;background:var(--tt-bg);color:var(--tt-fg);border:1px solid var(--tt-bd);border-left:5px solid var(--tt-fg)}
+.cls-time{display:flex;flex-direction:column;align-items:center;line-height:1.25;min-width:3.4rem;padding-right:1rem;border-right:1px solid var(--tt-bd)}
+.cls-time span{font-size:.8rem;opacity:.75}
+.cls-main{flex:1;min-width:0}
+.cls-title{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;font-size:1.05rem}
+.cls-kind{font-size:.72rem;padding:.05rem .55rem;border:1px solid var(--tt-fg);border-radius:99px;text-transform:uppercase;letter-spacing:.04em}
+.cls-meta{display:flex;flex-wrap:wrap;gap:.2rem 1rem;font-size:.85rem;opacity:.85;margin-top:.15rem}
+.cls-meta i{margin-right:.3rem}
+.cls-pill{flex:none;font-size:.78rem;font-weight:600;padding:.15rem .7rem;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.cls-pill i{margin-right:.3rem}
+.cls-pill.live{background:var(--tt-fg);color:var(--tt-bg);border-color:var(--tt-fg)}
+.dot-live{display:inline-block;width:8px;height:8px;border-radius:50%;background:currentColor;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.cls-row.is-done{opacity:.55}
+.cls-row.is-live{box-shadow:0 .25rem .75rem rgba(0,0,0,.15)}
+@media(prefers-reduced-motion:reduce){.dot-live{animation:none}}
+@media(max-width:575.98px){.cls-row{flex-wrap:wrap}.cls-pill{margin-left:auto}}
+
+/* Dashboard summary card: centred title, big total, evenly spaced rows */
+.sum .card-head{text-align:center;letter-spacing:.03em}
+.sum-total{display:flex;flex-direction:column;align-items:center;padding:1rem 1.1rem}
+.sum-total strong{font-family:'Jost',sans-serif;font-size:2.5rem;font-weight:500;line-height:1}
+.sum-total span{margin-top:.25rem;font-size:.8rem;color:var(--mute);text-transform:uppercase;letter-spacing:.08em}
+.sum-list{padding:.35rem 1.25rem .6rem}
+.sum-list li{padding:.6rem 0}
+.sum-list li+li{border-top:1px solid var(--line)}
+.sum-list strong{font-family:'Jost',sans-serif;font-size:1.1rem;font-weight:500;min-width:2rem;text-align:right}
+
+/* Weeks left column is centred */
+.table-sage thead th:nth-child(2),.table-sage tbody td:nth-child(2){text-align:center}
+
+/* ===== Mobile polish ===== */
+@media(max-width:991.98px){
+  /* Open menu: dividers between links, active link in blue, greeting left and buttons right */
+  .top-nav .navbar-collapse{padding-bottom:.75rem}
+  .top-nav .navbar-nav .nav-item+.nav-item{border-top:1px solid var(--line)}
+  .top-nav .nav-link{padding:.75rem 0}
+  .top-nav .nav-link.active{color:var(--accent)}
+  .top-nav .navbar-collapse>.d-flex{justify-content:flex-end;border-top:1px solid var(--line);padding-top:.75rem;margin-top:.25rem!important}
+  .top-nav .navbar-collapse>.d-flex>span{margin-right:auto}
+}
+@media(max-width:767.98px){
+  /* Page header stacks: title first, then controls full width */
+  .page-head{flex-direction:column;align-items:stretch!important;gap:.75rem}
+  .page-head .d-flex.flex-wrap{display:grid!important;grid-template-columns:1fr 1fr;gap:.5rem}
+  .page-head #weekBadge{grid-column:1/-1;text-align:center}
+  .page-head .btn-primary{width:100%}
+}

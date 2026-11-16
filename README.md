@@ -1,8 +1,8 @@
 # Tracker - Assignment Tracker
 
-Tracker is a small web app I built for my **IMS566 Advanced Web Design Development and Content Management** individual project. I kept forgetting which assignments were due and which week I was in, so I turned my CDIM262 tracker sheet into a website where I can see everything in one place: my assignments, my courses and my weekly class timetable.
+Tracker is a small web app I made for my **IMS566 Advanced Web Design Development and Content Management** individual project. I kept losing track of which assignments were due and which week of the semester I was in, so I took my CDIM262 tracker sheet and turned it into a website. Now I can see everything in one place: my assignments, my courses and my weekly class timetable.
 
-There is no backend or database. The sample data is in `js/data.js`, and anything I add or change is saved in the browser's `localStorage`.
+There is no backend or database. The sample data lives in `js/data.js`, and anything I add or change gets saved in the browser's `localStorage`.
 
 **Live website (GitHub Pages):** https://welptae.github.io/tracker/
 **GitHub repository:** https://github.com/welptae/tracker
@@ -15,59 +15,59 @@ Open the live website and log in with:
 |---|---|
 | student | student123 |
 
-If you type a wrong username or password, an error message appears and the password box is cleared. If you try to open any other page without logging in, it sends you back to the login page.
+If you type the wrong username or password, an error message shows up and the password box is cleared. If you try to open any other page without logging in first, you get sent back to the login page.
 
 ## Features
 
 **Login**
-- Hardcoded account with clear error messages
-- Show / hide password button (the eye icon)
-- Session check on every other page, so you can't skip the login
+- A hardcoded account with clear error messages
+- A show / hide password button (the eye icon)
+- Every other page checks your session, so you can't skip the login
 - Passwords are stored as SHA-256 hashes instead of plain text
 
 **Navigation and layout**
-- One navigation bar on every page, with a hamburger menu on mobile
-- Shared footer, a page title and a meta description on each page
-- Responsive layout built with the Bootstrap grid, so it works on desktop and phone sizes
-- Light and dark mode (it remembers your choice)
+- The same navigation bar on every page, with a hamburger menu on mobile
+- A shared footer, plus a page title and meta description on each page
+- A responsive layout built with the Bootstrap grid, so it works on both desktop and phone sizes
+- Light and dark mode, and it remembers which one you picked
 
 **Dashboard**
-- Summary card with the total number of assignments and a count for each status, overdue and due in the next 2 weeks
+- A summary card showing the total number of assignments, a count for each status, and how many are overdue or due in the next 2 weeks
 - Three Chart.js charts: tasks by status, tasks by course, and tasks due per week (split into individual and group)
-- The charts are clickable. Clicking a slice or bar filters the due-date table below, and clicking it again (or pressing Clear filter) resets it
+- The charts are clickable. Click a slice or bar to filter the due-date table below, then click it again (or press Clear filter) to reset it
 - "Due this week" and "Today's classes" panels
-- "Semester at a glance" heatmap: one square per week, darker = more open tasks due, red = overdue, and clicking a week filters the table
-- Due-date table that flags overdue tasks
+- A "Semester at a glance" heatmap with one square per week. Darker means more open tasks due, red means overdue, and clicking a week filters the table
+- A due-date table that flags overdue tasks
 - The current week is worked out automatically from the semester start and end dates
 
 **Assignments** (data page 1)
 - Search, filter by course and status, and sort by newest, course, earliest due or priority
 - Edit the due week and status straight from each row
 - Priority labels (Low, Medium, High) and a "Due soon" filter
-- Notes viewer, add, edit and delete (with an Undo button after deleting)
+- A notes viewer, plus add, edit and delete (with an Undo button after you delete something)
 - **Board view**: switch from List to Board for a Kanban layout with Not started, In progress and Completed columns. Drag a card to change its status, or use the arrow buttons on a phone
-- **Export**: the Export menu gives an Excel file or a calendar file (`.ics`) with your open deadlines and weekly classes, which you can import into Google Calendar or Outlook
+- **Export**: the Export menu gives you an Excel file or a calendar file (`.ics`) with your open deadlines and weekly classes, which you can import into Google Calendar or Outlook
 - **Export to Excel**: one button downloads an `.xlsx` file with three sheets (Assignments, Courses and Timetable)
 
 **Courses** (data page 2)
-- Card for each course with a progress bar, search and sorting
+- A card for each course with a progress bar, plus search and sorting
 - Click a card to see all the tasks for that course
 
 **Timetable** (data page 3)
-- Weekly grid of lectures and tutorials with the room and lecturer
-- "Next class" countdown and a red line showing the current time
-- Warns you if a new class overlaps with another one
-- Turns into a day-by-day list on phones
+- A weekly grid of lectures and tutorials with the room and lecturer
+- A "Next class" countdown and a red line showing the current time
+- A warning if a new class overlaps with another one
+- It turns into a day-by-day list on phones
 
 **Guided tour (every page)**
 - Login, Dashboard, Assignments, Courses and Timetable each have their own step-by-step tour
-- Each tour starts automatically the first time you open that page, and the ? button replays it (on the login page it is the "Take a tour" button)
+- Each tour starts by itself the first time you open that page, and the ? button replays it (on the login page it is the "Take a tour" button)
 - The last step of each tour has a "Next" button that takes you to the next page's tour (Dashboard, Assignments, Courses, Timetable)
-- Works with the keyboard (arrow keys, Esc) and skips anything hidden on small screens
+- It works with the keyboard (arrow keys and Esc) and skips anything that is hidden on small screens
 
 **Extra**
-- Can be installed as an app and works offline (needs https, which GitHub Pages has)
-- Skip-to-content link and labels for screen readers
+- It can be installed as an app and works offline (this needs https, which GitHub Pages has)
+- A skip-to-content link and labels for screen readers
 
 ## Frameworks and libraries
 
@@ -92,7 +92,7 @@ sw.js                     offline support (must stay in the root)
 README.md
 ```
 
-Each file has comments explaining what the code does.
+Each file has comments that explain what the code does.
 
 ## Things to know
 

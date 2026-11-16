@@ -1,0 +1,41 @@
+/* ===== Timetable ===== Weekly grid (desktop) and per-day list (mobile). Colours are Bootstrap 5.3's subtle tones. */
+.tt-next{border:0;padding:1.5rem;color:#fff;background:linear-gradient(135deg,#0d6efd,#0a58ca);box-shadow:0 .5rem 1.25rem rgba(13,110,253,.3)}   /* solid Bootstrap blue so the banner stands out from the white panels */
+.tt-next .muted{color:rgba(255,255,255,.85)}
+.tt-next-icon{flex:none;width:3.5rem;height:3.5rem;border-radius:50%;display:grid;place-items:center;font-size:1.75rem;background:rgba(255,255,255,.18)}
+.tt-next-label{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.tt-next .big{font-size:2.5rem;font-weight:600;line-height:1.1;margin:.15rem 0 .35rem}
+.tt-live{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1rem;padding:.3rem .9rem;border-radius:99px;font-size:.85rem;background:rgba(255,255,255,.2)}
+.tt-next-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.1rem 2rem}
+.tt-next-row{display:flex;align-items:center;gap:1rem}
+.tt-next-detail{flex:1 1 15rem;max-width:28rem;padding:.8rem 1rem;border-radius:.75rem;background:rgba(255,255,255,.14)}
+.tt-next-title{display:flex;align-items:center;flex-wrap:wrap;gap:.6rem;font-size:1.2rem}
+.tt-kind{font-size:.72rem;padding:.05rem .6rem;border:1px solid rgba(255,255,255,.75);border-radius:99px;text-transform:uppercase;letter-spacing:.05em}
+.tt-next-meta{list-style:none;margin:.45rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.25rem 1.1rem;font-size:.92rem}
+.tt-next-meta i{margin-right:.4rem;opacity:.85}
+@media(max-width:575.98px){.tt-next .big{font-size:2rem}}
+.tt-wrap{overflow-x:auto}
+.tt{--rowh:56px;display:grid;grid-template-columns:56px repeat(var(--cols),minmax(140px,1fr));min-width:calc(56px + var(--cols) * 140px);border:1px solid var(--line);background:#fff}
+.tt-corner,.tt-dayh{background:var(--soft);border-bottom:1px solid var(--line)}
+.tt-dayh{padding:.5rem;text-align:center;font-weight:600;border-left:1px solid var(--line)}
+.tt-dayh.today{background:#cfe2ff;color:#052c65}
+.tt-times{position:relative}
+.tt-time{position:absolute;right:6px;font-size:.75rem;color:var(--mute);transform:translateY(-50%)}
+.tt-time.first{transform:none;top:2px!important}
+.tt-col{position:relative;border-left:1px solid var(--line);background-image:repeating-linear-gradient(to bottom,var(--line) 0,var(--line) 1px,transparent 1px,transparent var(--rowh))}
+.tt-col.today{background-color:#f3f8ff}
+.tt-block{position:absolute;display:flex;flex-direction:column;overflow:hidden;text-align:left;padding:.25rem .4rem;font-size:.75rem;line-height:1.3;border-radius:2px;cursor:pointer;
+  background:var(--tt-bg);color:var(--tt-fg);border:1px solid var(--tt-bd)}
+.tt-block:hover,.tt-block:focus-visible{box-shadow:0 .25rem .75rem rgba(0,0,0,.18);z-index:2}
+.tt-code{font-weight:600;font-size:.85rem}
+.tt-now{position:absolute;left:0;right:0;border-top:2px solid #dc3545;z-index:3;pointer-events:none}
+.tt-now::before{content:'';position:absolute;left:-4px;top:-5px;width:8px;height:8px;border-radius:50%;background:#dc3545}
+.tt-ag{background:var(--tt-bg);color:var(--tt-fg);border-left:4px solid var(--tt-bd)!important}
+.tt-ag:hover{background:var(--tt-bg);filter:brightness(.97)}
+.tt-c0{--tt-bg:#cfe2ff;--tt-fg:#052c65;--tt-bd:#9ec5fe}
+.tt-c1{--tt-bg:#d1e7dd;--tt-fg:#0a3622;--tt-bd:#a3cfbb}
+.tt-c2{--tt-bg:#cff4fc;--tt-fg:#055160;--tt-bd:#9eeaf9}
+.tt-c3{--tt-bg:#fff3cd;--tt-fg:#664d03;--tt-bd:#ffe69c}
+.tt-c4{--tt-bg:#f8d7da;--tt-fg:#58151c;--tt-bd:#f1aeb5}
+.tt-c5{--tt-bg:#e0cffc;--tt-fg:#3d0a91;--tt-bd:#c29ffa}
+.tt-c6{--tt-bg:#f7d6e6;--tt-fg:#5c1a3a;--tt-bd:#efadce}
+.tt-c7{--tt-bg:#d2f4ea;--tt-fg:#0b4a3a;--tt-bd:#a6e9d5}
